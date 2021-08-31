@@ -1,0 +1,25 @@
+.header{
+   color:#4CAF50;
+}
+
+input[type=text]{
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   box-sizing: border-box;
+   border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button[type=submit]{
+   width:100%;
+   background-color:#4CAF50;
+   border:none;
+   color:white;
+   padding:16px 34px;
+   text-decoration: none;
+   margin:4px 2px;
+   cursor: pointer;
+}
+#result{
+   color:rgb(255, 123, 0);
+}

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<style>
+body { background-color:#f1f1f1}
+.card {margin-top: 30px; }
+/* .card-img-top {
+   height: 200px;
+   width: 200px;
+} */
+.img_f
+{
+float:right;
+}
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+.footer {
+  padding: 8px;
+  text-align: center;
+  background: #ddd;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom:40px;
+}
+.img-f
+{
+height:180px
+}
+@media screen and (max-width: 700px) {
+  .row, .navbar {
+    flex-direction: column;
+  }
+  .header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+.img-f
+{
+height:150px
+}
+}
+
+</style>
+    <title>Deployed ML Model</title>
+  </head>
+  <body background="">
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Disease Pradictor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" href="#">Features</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" href="#">Pricing</a>-->
+<!--            </li>-->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Disease List
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Cancer prediction</a></li>
+                <li><a class="dropdown-item" href="#">Heart Disease Prediction</a></li>
+                <li><a class="dropdown-item" href="#">Parkinson's Disease Prediction</a></li>
+                <li><a class="dropdown-item" href="#">Diabetes Prediction</a></li>
+                <li><a class="dropdown-item" href="#">Parkinson's Disease Prediction</a></li>
+              </ul>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{url_for('about')}}">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ <div class="header">
+<!--    <img   class="img-f" src="https://medical-technology.nridigital.com/medical-technology/medical_technology_feb21/ai_models_underestimate_risk/778921/Diagnostic_imaging_mobile.svg" >-->
+  <div><h2>Disease Predictor Using ML</h2>
+  <p>"Every human being is the author <br>of his own <b></b>Health or Disease</b>"  </p>
+</div>
+  </div>
+<!--<div style="height:500px;">-->
+<!--        <img  style="float:left" class="img-f" src="https://medical-technology.nridigital.com/medical-technology/medical_technology_feb21/ai_models_underestimate_risk/778921/Diagnostic_imaging_mobile.svg" width="50%">-->
+<!--        <h1 style="float:left;color:white;padding:90px">Disease Prediction</h1>-->
+<!--</div>-->
+<!-- <br>-->
+<!-- <br>-->
+<!-- <hr/>-->
+<!--<div class="row">-->
+  <center> <div class="container" >
+      <div class="row">
+        <div class="col">
+         <div class="card" style="width: 15rem;height:23rem">
+            <img src="{{url_for('static',filename='images/irisflower.jpg')}}" class="card-img-top" alt="..." height="135px"  >
+            <div class="card-body">
+              <h5 class="card-title">Iris flower</h5>
+              <p class="card-text">A system for identify iris flower.This system used Random forest algorithm to identify Iris flower.</p><br>
+              <a href="{{url_for('iris')}}" class="btn btn-primary">Let's Predict</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+         <div class="card" style="width: 15rem;height:23rem">
+            <img src="{{url_for('static',filename='images/diabetes.jpg')}}" class="card-img-top" alt="..." height="135px">
+            <div class="card-body">
+              <h5 class="card-title">Diabetes Prediction</h5>
+              <p class="card-text">A system for diabetes prediction.This system used SVM algorithm to predict that you have diabetes or not.</p>
+              <a href="{{url_for('diabetes')}}" class="btn btn-primary">Let's Predict</a>
+            </div>
+          </div>
+        </div>
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Card title</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Card title</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+    </div>
+
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Iris flower</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="covid.jpg" class="card-img-top" alt="..." height="135px">-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Covid</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Card title</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Card title</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Iris flower</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="covid.jpg" class="card-img-top" alt="..." height="135px">-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Covid</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Card title</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Card title</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Iris flower</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="covid.jpg" class="card-img-top" alt="..." height="135px">-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Covid</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Card title</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--         <div class="card" style="width: 15rem;">-->
+<!--            <img src="irisflower.jpg" class="card-img-top" alt="..." height="135px"  >-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">Card title</h5>-->
+<!--              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--              <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+    <!-- Optional JavaScript; choose one of the two! -->
+   </center>
+<!--    </div>-->
+<div class="footer" style="bottom: 0;">
+  <h7>subhram patel</h7><br/>
+<!--  <h7>subhram patel</h7>-->
+</div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
