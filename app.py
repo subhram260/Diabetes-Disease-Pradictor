@@ -14,6 +14,7 @@ import pickle
 app = Flask(__name__)
 model1= pickle.load(open('model.pkl','rb'))
 diabetesmodel = pickle.load(open('diabetesmodel.pkl','rb'))
+physicalDiabetes = pickle.load(open('physicalDiabetes.pkl','rb'))
 diabetesmodelscaler = pickle.load(open('diabetesmodelscaler.pkl','rb'))
 
 # path="../DATASETS/Disease/diabaties/scalerdiabetes.csv"
@@ -51,10 +52,23 @@ def diabetespredict():
         pre="diabetes"
     else:
         pre="No diabetes"
-
-
     return render_template('diabetes.html',prediction_textd="\nFrom The report we know person have '{}'".format(pre))
+# physicaldiabetes
 
+@app.route('/physicaldiabetespredict',methods=['POST','GET'])
+def physicaldiabetespredict():
+    input_data=[float(x) for x in request.form.values()]
+    print(input_data)
+    inumpyarray = np.asarray(input_data)
+    ireshape = inumpyarray.reshape(1, -1)
+    final_features = ireshape
+    prediction = physicalDiabetes.predict(final_features)
+    pre=""
+    if(prediction[0]==1):
+        pre="diabetes"
+    else:
+        pre="No diabetes"
+    return render_template('physical.html',physical_text="\nFrom The report we know person have '{}'".format(pre))
 
 @app.route('/iris',methods=['GET','POST'])
 def iris():
@@ -63,6 +77,10 @@ def iris():
 @app.route('/diabetes',methods=['GET','POST'])
 def diabetes():
     return render_template('diabetes.html')
+
+@app.route('/physicaldiabetes',methods=['GET','POST'])
+def physicaldiabetes():
+    return render_template('physical.html')
 
 @app.route('/about',methods=['GET','POST'])
 def about():
