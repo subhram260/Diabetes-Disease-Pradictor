@@ -27,17 +27,17 @@ def Home():
     return render_template('index.html')
 
 
-@app.route('/predict',methods=['POST','GET'])
-def predict():
-    int_features=[float(x) for x in request.form.values()]
-    print(int_features)
-    final_features=[np.array(int_features)]
-    print(final_features)
-    prediction = model1.predict(final_features)
-    def nts(arg):
-        switcher = {1: 'Iris-versicolor', 2: 'Iris-setosa', 3: 'Iris-virginica'}
-        return switcher[arg]
-    return render_template('iris.html',prediction_text="\nThe predicted flower name with {:.2f} % accuracy is '{}'".format(9.96,nts(prediction[0])))
+# @app.route('/predict',methods=['POST','GET'])
+# def predict():
+#     int_features=[float(x) for x in request.form.values()]
+#     print(int_features)
+#     final_features=[np.array(int_features)]
+#     print(final_features)
+#     prediction = model1.predict(final_features)
+#     def nts(arg):
+#         switcher = {1: 'Iris-versicolor', 2: 'Iris-setosa', 3: 'Iris-virginica'}
+#         return switcher[arg]
+#     return render_template('iris.html',prediction_text="\nThe predicted flower name with {:.2f} % accuracy is '{}'".format(9.96,nts(prediction[0])))
 
 
 @app.route('/diabetespredict',methods=['POST','GET'])
@@ -70,9 +70,9 @@ def physicaldiabetespredict():
         pre="No diabetes"
     return render_template('physical.html',physical_text="\nFrom The report we know person have '{}'".format(pre))
 
-@app.route('/iris',methods=['GET','POST'])
-def iris():
-    return render_template('iris.html')
+# @app.route('/iris',methods=['GET','POST'])
+# def iris():
+#     return render_template('iris.html')
 
 @app.route('/diabetes',methods=['GET','POST'])
 def diabetes():
@@ -82,9 +82,6 @@ def diabetes():
 def physicaldiabetes():
     return render_template('physical.html')
 
-@app.route('/about',methods=['GET','POST'])
-def about():
-    return render_template('about.html')
 
 
 # main driver function

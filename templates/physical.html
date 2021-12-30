@@ -1,63 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link  rel="stylesheet" href="{{ url_for('static',filename='style.css')}}"/>
-   <style>
-   input[type=text]{
-   width: 100%;
-   padding: 12px 20px;
-   margin: 8px 0;
-   box-sizing: border-box;
-   border: 1px solid #ccc;
-  border-radius: 4px;
-}
-  button[type=submit]{
-   width:100%;
-   background-color:#ff5050;
-   border:none;
-   color:white;
-   padding:16px 34px;
-   text-decoration: none;
-   margin:4px 2px;
-   cursor: pointer;
-}
-button[type=submit]:hover {
-  background-color: #045007;
-}
-.formcss{
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}" />
+  <style>
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
 
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-.header{
-   color:#ffffff;
+    button[type=submit] {
+      width: 100%;
+      background-color: #ff5050;
+      border: none;
+      color: white;
+      padding: 16px 34px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
 
-}
-.head{
+    button[type=submit]:hover {
+      background-color: #045007;
+    }
 
-  border-radius: 5px;
-  background-color: rgb(68, 139, 65);
-  padding: 5px;
-}
-.radiodiv{
-  background-color: rgba(255, 255, 255, 0.76);
-    display: block;
-    width: 100px;
-    float: left;
-    margin: 0 10px;
-    position: relative;
-    border: 1px solid rgb(0, 0, 0)
-}
-.radiodiv:hover
-{
-  background-color:#52ff58;
-  color: rgb(0, 0, 0);
-}
-label {
+    .formcss {
+
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .header {
+      color: #ffffff;
+
+    }
+
+    .head {
+
+      border-radius: 5px;
+      background-color: rgb(68, 139, 65);
+      padding: 5px;
+    }
+
+    .radiodiv {
+      background-color: rgba(255, 255, 255, 0.76);
+      display: block;
+      width: 100px;
+      float: left;
+      margin: 0 10px;
+      position: relative;
+      border: 1px solid rgb(0, 0, 0)
+    }
+
+    .radiodiv:hover {
+      background-color: #52ff58;
+      color: rgb(0, 0, 0);
+    }
+
+    label {
       padding: 12px 10px;
       display: block;
       text-align: center;
@@ -65,7 +73,7 @@ label {
       position: relative;
       overflow: hidden;
     }
-  
+
     input[type="radio"] {
       width: 32px;
       height: 32px;
@@ -78,22 +86,61 @@ label {
       cursor: pointer;
       visibility: hidden;
     }
-    input:checked ~ label {
-      color:white;  
-      background-color:#06770a
+
+    input:checked~label {
+      color: white;
+      background-color: #06770a
     }
+
     input:before {
-        transform: translate(-50%, -50%) scale3d(56, 56, 1);
-        opacity: 1;
+      transform: translate(-50%, -50%) scale3d(56, 56, 1);
+      opacity: 1;
+    }
+
+    input:after {
+      background-color: #54E0C7;
+      border-color: #54E0C7;
+    }
+
+    .radiohead {
+      text-align: left;
+    }
+
+    .outerdiv {
+      width: 250px;
+      height: 100px;
+      position: relative;
+      margin: 0px;
+      float: left;
+      padding: 10px;
+    }
+
+    @media screen and (min-width:1440px) {
+      .formcss {
+        border-radius: 5px;
+        padding-left: 190px;
+        padding-right: 190px;
       }
-      input:after {
-        background-color: #54E0C7;
-        border-color: #54E0C7;
+
+      button[type=submit] {
+        width: 100%;
+        background-color: #ff5050;
+        border: none;
+        color: white;
+        padding: 16px 34px;
+        text-decoration: none;
+        margin: 20px 2px;
+        cursor: pointer;
       }
-      .radiohead{
-        text-align:left;
+    }
+
+    @media only screen and (max-width: 1440px) and (min-width: 630px) {
+      .formcss {
+        border-radius: 5px;
+        padding: 20px;
       }
-      .outerdiv{
+
+      .outerdiv {
         width: 250px;
         height: 100px;
         position: relative;
@@ -101,55 +148,24 @@ label {
         float: left;
         padding: 10px;
       }
-@media screen and (min-width:1440px)
-{
-.formcss{
-  border-radius: 5px;
-   background-color:#54E0C7;
-  padding-left: 190px;padding-right: 190px;
-}
-  button[type=submit]{
-   width:100%;
-   background-color:#ff5050;
-   border:none;
-   color:white;
-   padding:16px 34px;
-   text-decoration: none;
-   margin:20px 2px;
-   cursor: pointer;
-}
-}
-@media only screen and (max-width: 1440px) and (min-width: 630px)  {
-  .formcss{
-  border-radius: 5px;
-  background-color:#54E0C7;
-  padding: 20px;
-}
-.outerdiv{
-        width: 250px;
-        height: 100px;
-        position: relative;
-        margin: 0px;
-        float: left;
-        padding: 10px;
+
+      input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 0px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
       }
-  input[type=text]{
-   width: 100%;
-   padding: 12px 20px;
-   margin: 0px 0;
-   box-sizing: border-box;
-   border: 1px solid #ccc;
-  border-radius: 4px;
-}
-}
-@media screen and (max-width:595px)
-{
-.formcss{
-  border-radius: 5px;
-  background-color:#54E0C7;
-  padding: 20px;
-}
-.outerdiv{
+    }
+
+    @media screen and (max-width:595px) {
+      .formcss {
+        border-radius: 5px;
+        padding: 20px;
+      }
+
+      .outerdiv {
         width: 250px;
         height: 100px;
         position: relative;
@@ -157,222 +173,226 @@ label {
         float: revert;
         padding: 10px;
       }
-}
-</style>
-   <title>Document</title>
+    }
+  </style>
+  <title>Document</title>
 </head>
-<body><center>
-  <div class="head"> <h1 class="header">DIABETES PREDICTION OVER PHYSICAL SYMPTOMS</h1></div>
-   <div class="formcss">
-   <form action="{{ url_for('physicaldiabetespredict')}}" method="post">
+
+<body>
+  <center>
+    <div class="head">
+      <h1 class="header">DIABETES PREDICTION OVER PHYSICAL SYMPTOMS</h1>
+    </div>
+    <div class="formcss">
+      <form action="{{ url_for('physicaldiabetespredict')}}" method="post">
 
 
-<input type="text" name="Age"  placeholder="Age" required/>
-<div class="outerouterdiv">
-<div class="outerdiv">
-  <h3 class="radiohead">Gender :</h3>
-  <div class="radiodiv">
-    <input type="radio" name="gender" id="male" value="1"  >
-    <label for="male">Male</label>
-  </div>
-  <div class="radiodiv">
-    <input type="radio" name="gender" id="Female" value="0">
-    <label for="Female">Female</label>
-</div>
-</div>
+        <input type="text" name="Age" placeholder="Age" required />
+        <div class="outerouterdiv">
+          <div class="outerdiv">
+            <h3 class="radiohead">Gender :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="gender" id="male" value="1">
+              <label for="male">Male</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="gender" id="Female" value="0">
+              <label for="Female">Female</label>
+            </div>
+          </div>
 
-<div class="outerdiv">
-  <h3 class="radiohead">Excessive Urination :</h3>
-  <div class="radiodiv">
-    <input type="radio" name="Excessive Urination" id="Yes" value="1"  >
-    <label for="Yes">Yes</label>
-  </div>
-  <div class="radiodiv">
-    <input type="radio" name="Excessive Urination" id="No" value="0">
-    <label for="No">No</label>
-</div>
-</div>
-</div>
+          <div class="outerdiv">
+            <h3 class="radiohead">Excessive Urination :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="Excessive Urination" id="Yes" value="1">
+              <label for="Yes">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="Excessive Urination" id="No" value="0">
+              <label for="No">No</label>
+            </div>
+          </div>
+        </div>
 
 
-<div class="outerouterdiv">
-  <div class="outerdiv">
-    <h3 class="radiohead">Extreme Thirstiness :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="Extreme Thirstiness" id="Yes1" value="1"  >
-      <label for="Yes1">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="Extreme Thirstiness" id="No1" value="0">
-      <label for="No1">No</label>
-  </div>
-  </div>
-  
-  <div class="outerdiv">
-    <h3 class="radiohead">sudden weight loss :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="sudden weight loss" id="Yes2" value="1"  >
-      <label for="Yes2">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="sudden weight loss" id="No2" value="0">
-      <label for="No2">No</label>
-  </div>
-  </div>
-  </div>
-  
-  
-<div class="outerouterdiv">
-  <div class="outerdiv">
-    <h3 class="radiohead">weakness :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="weakness" id="Yes3" value="1"  >
-      <label for="Yes3">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="weakness" id="No3" value="0">
-      <label for="No3">No</label>
-  </div>
-  </div>
-  
-  <div class="outerdiv">
-    <h3 class="radiohead">Extreme Hunger :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="Extreme Hunger" id="Yes4" value="1"  >
-      <label for="Yes4">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="Extreme Hunger" id="No4" value="0">
-      <label for="No4">No</label>
-  </div>
-  </div>
-  </div>
-    
-  
-<div class="outerouterdiv">
-  <div class="outerdiv">
-    <h3 class="radiohead">Genital thrush :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="Genital thrush" id="Yes5" value="1"  >
-      <label for="Yes5">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="Genital thrush" id="No5" value="0">
-      <label for="No5">No</label>
-  </div>
-  </div>
-  
-  <div class="outerdiv">
-    <h3 class="radiohead">visual blurring	 :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="visual blurring" id="Yes6" value="1"  >
-      <label for="Yes6">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="visual blurring" id="No6" value="0">
-      <label for="No6">No</label>
-  </div>
-  </div>
-  </div>
-    
-  
-<div class="outerouterdiv">
-  <div class="outerdiv">
-    <h3 class="radiohead">Itching :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="Itching" id="Yes7" value="1"  >
-      <label for="Yes7">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="Itching" id="No7" value="0">
-      <label for="No7">No</label>
-  </div>
-  </div>
-  
-  <div class="outerdiv">
-    <h3 class="radiohead">Irritability	 :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="Irritability" id="Yes8" value="1"  >
-      <label for="Yes8">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="Irritability" id="No8" value="0">
-      <label for="No8">No</label>
-  </div>
-  </div>
-  </div>
-    
-  
-<div class="outerouterdiv">
-  <div class="outerdiv">
-    <h3 class="radiohead">delayed healing :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="delayed healing" id="Yes9" value="1"  >
-      <label for="Yes9">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="delayed healing" id="No9" value="0">
-      <label for="No9">No</label>
-  </div>
-  </div>
-  
-  <div class="outerdiv">
-    <h3 class="radiohead">muscle Weakness :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="muscle Weakness" id="Yes10" value="1"  >
-      <label for="Yes10">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="muscle Weakness" id="No10" value="0">
-      <label for="No10">No</label>
-  </div>
-  </div>
-  </div>
-    
-  
-<div class="outerouterdiv">
-  <div class="outerdiv">
-    <h3 class="radiohead">muscle stiffness :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="muscle stiffness" id="Yes11" value="1"  >
-      <label for="Yes11">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="muscle stiffness" id="No11" value="0">
-      <label for="No11">No</label>
-  </div>
-  </div>
-  
-  <div class="outerdiv">
-    <h3 class="radiohead">Hairlessness :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="Hairlessness" id="Yes12" value="1"  >
-      <label for="Yes12">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="Hairlessness" id="No12" value="0">
-      <label for="No12">No</label>
-  </div>
-  </div>
-  </div>
+        <div class="outerouterdiv">
+          <div class="outerdiv">
+            <h3 class="radiohead">Extreme Thirstiness :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="Extreme Thirstiness" id="Yes1" value="1">
+              <label for="Yes1">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="Extreme Thirstiness" id="No1" value="0">
+              <label for="No1">No</label>
+            </div>
+          </div>
 
-    
-  
-<div class="outerouterdiv">
-  <div class="outerdiv">
-    <h3 class="radiohead">Excessive body fatness	 :</h3>
-    <div class="radiodiv">
-      <input type="radio" name="Excessive body fatness" id="Yes13" value="1"  >
-      <label for="Yes13">Yes</label>
-    </div>
-    <div class="radiodiv">
-      <input type="radio" name="Excessive body fatness" id="No13" value="0">
-      <label for="No13">No</label>
-  </div>
-  </div>
-  
-  
-  </div>
+          <div class="outerdiv">
+            <h3 class="radiohead">sudden weight loss :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="sudden weight loss" id="Yes2" value="1">
+              <label for="Yes2">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="sudden weight loss" id="No2" value="0">
+              <label for="No2">No</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="outerouterdiv">
+          <div class="outerdiv">
+            <h3 class="radiohead">weakness :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="weakness" id="Yes3" value="1">
+              <label for="Yes3">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="weakness" id="No3" value="0">
+              <label for="No3">No</label>
+            </div>
+          </div>
+
+          <div class="outerdiv">
+            <h3 class="radiohead">Extreme Hunger :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="Extreme Hunger" id="Yes4" value="1">
+              <label for="Yes4">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="Extreme Hunger" id="No4" value="0">
+              <label for="No4">No</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="outerouterdiv">
+          <div class="outerdiv">
+            <h3 class="radiohead">Genital thrush :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="Genital thrush" id="Yes5" value="1">
+              <label for="Yes5">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="Genital thrush" id="No5" value="0">
+              <label for="No5">No</label>
+            </div>
+          </div>
+
+          <div class="outerdiv">
+            <h3 class="radiohead">visual blurring :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="visual blurring" id="Yes6" value="1">
+              <label for="Yes6">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="visual blurring" id="No6" value="0">
+              <label for="No6">No</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="outerouterdiv">
+          <div class="outerdiv">
+            <h3 class="radiohead">Itching :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="Itching" id="Yes7" value="1">
+              <label for="Yes7">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="Itching" id="No7" value="0">
+              <label for="No7">No</label>
+            </div>
+          </div>
+
+          <div class="outerdiv">
+            <h3 class="radiohead">Irritability :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="Irritability" id="Yes8" value="1">
+              <label for="Yes8">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="Irritability" id="No8" value="0">
+              <label for="No8">No</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="outerouterdiv">
+          <div class="outerdiv">
+            <h3 class="radiohead">delayed healing :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="delayed healing" id="Yes9" value="1">
+              <label for="Yes9">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="delayed healing" id="No9" value="0">
+              <label for="No9">No</label>
+            </div>
+          </div>
+
+          <div class="outerdiv">
+            <h3 class="radiohead">muscle Weakness :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="muscle Weakness" id="Yes10" value="1">
+              <label for="Yes10">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="muscle Weakness" id="No10" value="0">
+              <label for="No10">No</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="outerouterdiv">
+          <div class="outerdiv">
+            <h3 class="radiohead">muscle stiffness :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="muscle stiffness" id="Yes11" value="1">
+              <label for="Yes11">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="muscle stiffness" id="No11" value="0">
+              <label for="No11">No</label>
+            </div>
+          </div>
+
+          <div class="outerdiv">
+            <h3 class="radiohead">Hairlessness :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="Hairlessness" id="Yes12" value="1">
+              <label for="Yes12">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="Hairlessness" id="No12" value="0">
+              <label for="No12">No</label>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="outerouterdiv">
+          <div class="outerdiv">
+            <h3 class="radiohead">Excessive body fatness :</h3>
+            <div class="radiodiv">
+              <input type="radio" name="Excessive body fatness" id="Yes13" value="1">
+              <label for="Yes13">Yes</label>
+            </div>
+            <div class="radiodiv">
+              <input type="radio" name="Excessive body fatness" id="No13" value="0">
+              <label for="No13">No</label>
+            </div>
+          </div>
+
+
+        </div>
         <!-- <input type="text" name="Pregnancies" class="csl" placeholder="Number of Pregnancies" required/>
         <input type="text" name="Glucose" class="csl" placeholder="Glucose level" required/>
         <input type="text" name="BloodPressure" class="csl" placeholder="BloodPressure" required/>
@@ -381,17 +401,18 @@ label {
         <input type="text" name="BMI" class="csl" placeholder="BMI" required/>
         <input type="text" name="DiabetesPedigreeFunction" class="csl" placeholder="DiabetesPedigreeFunction" required/>
         <input type="text" name="Age" class="csl" placeholder="Age" required/> -->
-<br>
-<br>
-      <button type="submit" value="submit" class="btn-primary">VIEW REPORT</button>
-   </form>
-      </div>
+        <br>
+        <br>
+        <button type="submit" value="submit" class="btn-primary">VIEW REPORT</button>
+      </form>
+    </div>
 
 
-<h3 id="result"> {{ physical_text }} </h3>
-</center>
+    <h3 id="result"> {{ physical_text }} </h3>
+  </center>
 
 
 
 </body>
+
 </html>
